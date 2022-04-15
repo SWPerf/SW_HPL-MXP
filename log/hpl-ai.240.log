@@ -1,0 +1,217 @@
+================================================================================
+HPLinpack 2.0  --  High-Performance Linpack benchmark  --   September 10, 2008
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      : 1523712 
+NB     :    1024 
+PMAP   : Row-major process mapping
+P      :      15 
+Q      :      16 
+PFACT  :   Crout 
+NBMIN  :       4 
+NDIV   :       2 
+RFACT  :   Crout 
+BCAST  :  1RING_2RING 
+DEPTH  :       1 
+SWAP   : Spread-roll (long)
+L1     : no-transposed form
+U      : no-transposed form
+EQUIL  : yes
+ALIGN  : 32 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+Column=000010240 Fraction= 0.7% Gflops=1.234e+07 time      3.45 sec.
+Column=000020480 Fraction= 1.3% Gflops=1.236e+07 time      7.22 sec.
+Column=000030720 Fraction= 2.0% Gflops=1.238e+07 time     10.92 sec.
+Column=000040960 Fraction= 2.7% Gflops=1.238e+07 time     14.59 sec.
+Column=000051200 Fraction= 3.4% Gflops=1.237e+07 time     18.22 sec.
+Column=000061440 Fraction= 4.0% Gflops=1.238e+07 time     21.77 sec.
+Column=000071680 Fraction= 4.7% Gflops=1.236e+07 time     25.33 sec.
+Column=000081920 Fraction= 5.4% Gflops=1.235e+07 time     28.84 sec.
+Column=000092160 Fraction= 6.0% Gflops=1.234e+07 time     32.28 sec.
+Column=000102400 Fraction= 6.7% Gflops=1.233e+07 time     35.71 sec.
+Column=000112640 Fraction= 7.4% Gflops=1.232e+07 time     39.06 sec.
+Column=000122880 Fraction= 8.1% Gflops=1.231e+07 time     42.37 sec.
+Column=000133120 Fraction= 8.7% Gflops=1.230e+07 time     45.66 sec.
+Column=000143360 Fraction= 9.4% Gflops=1.230e+07 time     48.87 sec.
+Column=000153600 Fraction=10.1% Gflops=1.230e+07 time     52.04 sec.
+Column=000163840 Fraction=10.8% Gflops=1.229e+07 time     55.17 sec.
+Column=000174080 Fraction=11.4% Gflops=1.228e+07 time     58.26 sec.
+Column=000184320 Fraction=12.1% Gflops=1.228e+07 time     61.32 sec.
+Column=000194560 Fraction=12.8% Gflops=1.228e+07 time     64.30 sec.
+Column=000204800 Fraction=13.4% Gflops=1.227e+07 time     67.26 sec.
+Column=000215040 Fraction=14.1% Gflops=1.226e+07 time     70.18 sec.
+Column=000225280 Fraction=14.8% Gflops=1.226e+07 time     73.02 sec.
+Column=000235520 Fraction=15.5% Gflops=1.226e+07 time     75.86 sec.
+Column=000245760 Fraction=16.1% Gflops=1.226e+07 time     78.62 sec.
+Column=000256000 Fraction=16.8% Gflops=1.225e+07 time     81.35 sec.
+Column=000266240 Fraction=17.5% Gflops=1.225e+07 time     84.06 sec.
+Column=000276480 Fraction=18.1% Gflops=1.225e+07 time     86.70 sec.
+Column=000286720 Fraction=18.8% Gflops=1.224e+07 time     89.31 sec.
+Column=000296960 Fraction=19.5% Gflops=1.224e+07 time     91.89 sec.
+Column=000307200 Fraction=20.2% Gflops=1.224e+07 time     94.40 sec.
+Column=000317440 Fraction=20.8% Gflops=1.223e+07 time     96.89 sec.
+Column=000327680 Fraction=21.5% Gflops=1.223e+07 time     99.33 sec.
+Column=000337920 Fraction=22.2% Gflops=1.223e+07 time    101.72 sec.
+Column=000348160 Fraction=22.8% Gflops=1.223e+07 time    104.09 sec.
+Column=000358400 Fraction=23.5% Gflops=1.222e+07 time    106.41 sec.
+Column=000368640 Fraction=24.2% Gflops=1.222e+07 time    108.69 sec.
+Column=000378880 Fraction=24.9% Gflops=1.222e+07 time    110.94 sec.
+Column=000389120 Fraction=25.5% Gflops=1.222e+07 time    113.14 sec.
+Column=000399360 Fraction=26.2% Gflops=1.221e+07 time    115.32 sec.
+Column=000409600 Fraction=26.9% Gflops=1.221e+07 time    117.45 sec.
+Column=000419840 Fraction=27.6% Gflops=1.221e+07 time    119.55 sec.
+Column=000430080 Fraction=28.2% Gflops=1.220e+07 time    121.60 sec.
+Column=000440320 Fraction=28.9% Gflops=1.220e+07 time    123.62 sec.
+Column=000450560 Fraction=29.6% Gflops=1.220e+07 time    125.61 sec.
+Column=000460800 Fraction=30.2% Gflops=1.219e+07 time    127.56 sec.
+Column=000471040 Fraction=30.9% Gflops=1.219e+07 time    129.45 sec.
+Column=000481280 Fraction=31.6% Gflops=1.219e+07 time    131.35 sec.
+Column=000491520 Fraction=32.3% Gflops=1.219e+07 time    133.18 sec.
+Column=000501760 Fraction=32.9% Gflops=1.219e+07 time    134.98 sec.
+Column=000512000 Fraction=33.6% Gflops=1.218e+07 time    136.77 sec.
+Column=000522240 Fraction=34.3% Gflops=1.218e+07 time    138.49 sec.
+Column=000532480 Fraction=34.9% Gflops=1.218e+07 time    140.20 sec.
+Column=000542720 Fraction=35.6% Gflops=1.217e+07 time    141.88 sec.
+Column=000552960 Fraction=36.3% Gflops=1.217e+07 time    143.51 sec.
+Column=000563200 Fraction=37.0% Gflops=1.217e+07 time    145.11 sec.
+Column=000573440 Fraction=37.6% Gflops=1.217e+07 time    146.68 sec.
+Column=000583680 Fraction=38.3% Gflops=1.216e+07 time    148.21 sec.
+Column=000593920 Fraction=39.0% Gflops=1.216e+07 time    149.73 sec.
+Column=000604160 Fraction=39.7% Gflops=1.216e+07 time    151.20 sec.
+Column=000614400 Fraction=40.3% Gflops=1.216e+07 time    152.64 sec.
+Column=000624640 Fraction=41.0% Gflops=1.215e+07 time    154.06 sec.
+Column=000634880 Fraction=41.7% Gflops=1.215e+07 time    155.44 sec.
+Column=000645120 Fraction=42.3% Gflops=1.215e+07 time    156.80 sec.
+Column=000655360 Fraction=43.0% Gflops=1.214e+07 time    158.12 sec.
+Column=000665600 Fraction=43.7% Gflops=1.214e+07 time    159.42 sec.
+Column=000675840 Fraction=44.4% Gflops=1.214e+07 time    160.69 sec.
+Column=000686080 Fraction=45.0% Gflops=1.214e+07 time    161.92 sec.
+Column=000696320 Fraction=45.7% Gflops=1.213e+07 time    163.13 sec.
+Column=000706560 Fraction=46.4% Gflops=1.213e+07 time    164.32 sec.
+Column=000716800 Fraction=47.0% Gflops=1.213e+07 time    165.45 sec.
+Column=000727040 Fraction=47.7% Gflops=1.213e+07 time    166.59 sec.
+Column=000737280 Fraction=48.4% Gflops=1.212e+07 time    167.68 sec.
+Column=000747520 Fraction=49.1% Gflops=1.212e+07 time    168.74 sec.
+Column=000757760 Fraction=49.7% Gflops=1.212e+07 time    169.80 sec.
+Column=000768000 Fraction=50.4% Gflops=1.212e+07 time    170.81 sec.
+Column=000778240 Fraction=51.1% Gflops=1.211e+07 time    171.80 sec.
+Column=000788480 Fraction=51.7% Gflops=1.211e+07 time    172.78 sec.
+Column=000798720 Fraction=52.4% Gflops=1.211e+07 time    173.71 sec.
+Column=000808960 Fraction=53.1% Gflops=1.211e+07 time    174.63 sec.
+Column=000819200 Fraction=53.8% Gflops=1.210e+07 time    175.52 sec.
+Column=000829440 Fraction=54.4% Gflops=1.210e+07 time    176.38 sec.
+Column=000839680 Fraction=55.1% Gflops=1.210e+07 time    177.23 sec.
+Column=000849920 Fraction=55.8% Gflops=1.210e+07 time    178.05 sec.
+Column=000860160 Fraction=56.5% Gflops=1.209e+07 time    178.84 sec.
+Column=000870400 Fraction=57.1% Gflops=1.209e+07 time    179.63 sec.
+Column=000880640 Fraction=57.8% Gflops=1.209e+07 time    180.37 sec.
+Column=000890880 Fraction=58.5% Gflops=1.208e+07 time    181.11 sec.
+Column=000901120 Fraction=59.1% Gflops=1.208e+07 time    181.81 sec.
+Column=000911360 Fraction=59.8% Gflops=1.208e+07 time    182.50 sec.
+Column=000921600 Fraction=60.5% Gflops=1.208e+07 time    183.17 sec.
+Column=000931840 Fraction=61.2% Gflops=1.207e+07 time    183.81 sec.
+Column=000942080 Fraction=61.8% Gflops=1.207e+07 time    184.44 sec.
+Column=000952320 Fraction=62.5% Gflops=1.207e+07 time    185.05 sec.
+Column=000962560 Fraction=63.2% Gflops=1.207e+07 time    185.62 sec.
+Column=000972800 Fraction=63.8% Gflops=1.206e+07 time    186.20 sec.
+Column=000983040 Fraction=64.5% Gflops=1.206e+07 time    186.74 sec.
+Column=000993280 Fraction=65.2% Gflops=1.206e+07 time    187.27 sec.
+Column=001003520 Fraction=65.9% Gflops=1.206e+07 time    187.79 sec.
+Column=001013760 Fraction=66.5% Gflops=1.205e+07 time    188.27 sec.
+Column=001024000 Fraction=67.2% Gflops=1.205e+07 time    188.74 sec.
+Column=001034240 Fraction=67.9% Gflops=1.205e+07 time    189.21 sec.
+Column=001044480 Fraction=68.5% Gflops=1.205e+07 time    189.65 sec.
+Column=001054720 Fraction=69.2% Gflops=1.204e+07 time    190.07 sec.
+Column=001064960 Fraction=69.9% Gflops=1.204e+07 time    190.47 sec.
+Column=001075200 Fraction=70.6% Gflops=1.204e+07 time    190.88 sec.
+Column=001085440 Fraction=71.2% Gflops=1.204e+07 time    191.25 sec.
+Column=001095680 Fraction=71.9% Gflops=1.203e+07 time    191.61 sec.
+Column=001105920 Fraction=72.6% Gflops=1.203e+07 time    191.95 sec.
+Column=001116160 Fraction=73.3% Gflops=1.203e+07 time    192.30 sec.
+Column=001126400 Fraction=73.9% Gflops=1.202e+07 time    192.62 sec.
+Column=001136640 Fraction=74.6% Gflops=1.202e+07 time    192.93 sec.
+Column=001146880 Fraction=75.3% Gflops=1.202e+07 time    193.22 sec.
+Column=001157120 Fraction=75.9% Gflops=1.202e+07 time    193.51 sec.
+Column=001167360 Fraction=76.6% Gflops=1.201e+07 time    193.78 sec.
+Column=001177600 Fraction=77.3% Gflops=1.201e+07 time    194.05 sec.
+Column=001187840 Fraction=78.0% Gflops=1.201e+07 time    194.30 sec.
+Column=001198080 Fraction=78.6% Gflops=1.200e+07 time    194.55 sec.
+Column=001208320 Fraction=79.3% Gflops=1.200e+07 time    194.79 sec.
+Column=001218560 Fraction=80.0% Gflops=1.200e+07 time    195.02 sec.
+Column=001228800 Fraction=80.6% Gflops=1.199e+07 time    195.24 sec.
+Column=001239040 Fraction=81.3% Gflops=1.199e+07 time    195.46 sec.
+Column=001249280 Fraction=82.0% Gflops=1.198e+07 time    195.66 sec.
+Column=001259520 Fraction=82.7% Gflops=1.198e+07 time    195.86 sec.
+Column=001269760 Fraction=83.3% Gflops=1.197e+07 time    196.05 sec.
+Column=001280000 Fraction=84.0% Gflops=1.197e+07 time    196.25 sec.
+Column=001290240 Fraction=84.7% Gflops=1.196e+07 time    196.43 sec.
+Column=001300480 Fraction=85.3% Gflops=1.196e+07 time    196.60 sec.
+Column=001310720 Fraction=86.0% Gflops=1.195e+07 time    196.77 sec.
+Column=001320960 Fraction=86.7% Gflops=1.195e+07 time    196.96 sec.
+Column=001331200 Fraction=87.4% Gflops=1.194e+07 time    197.13 sec.
+Column=001341440 Fraction=88.0% Gflops=1.193e+07 time    197.28 sec.
+Column=001351680 Fraction=88.7% Gflops=1.193e+07 time    197.44 sec.
+Column=001361920 Fraction=89.4% Gflops=1.192e+07 time    197.59 sec.
+Column=001372160 Fraction=90.1% Gflops=1.192e+07 time    197.73 sec.
+Column=001382400 Fraction=90.7% Gflops=1.191e+07 time    197.87 sec.
+Column=001392640 Fraction=91.4% Gflops=1.190e+07 time    198.00 sec.
+Column=001402880 Fraction=92.1% Gflops=1.190e+07 time    198.14 sec.
+Column=001413120 Fraction=92.7% Gflops=1.189e+07 time    198.26 sec.
+Column=001423360 Fraction=93.4% Gflops=1.188e+07 time    198.38 sec.
+Column=001433600 Fraction=94.1% Gflops=1.188e+07 time    198.49 sec.
+Column=001443840 Fraction=94.8% Gflops=1.187e+07 time    198.60 sec.
+Column=001454080 Fraction=95.4% Gflops=1.187e+07 time    198.71 sec.
+Column=001464320 Fraction=96.1% Gflops=1.186e+07 time    198.80 sec.
+Column=001474560 Fraction=96.8% Gflops=1.186e+07 time    198.90 sec.
+Column=001484800 Fraction=97.4% Gflops=1.185e+07 time    198.99 sec.
+Column=001495040 Fraction=98.1% Gflops=1.185e+07 time    199.08 sec.
+Column=001505280 Fraction=98.8% Gflops=1.184e+07 time    199.17 sec.
+Column=001515520 Fraction=99.5% Gflops=1.184e+07 time    199.24 sec.
+CPU 18956 CG 0 iter 1 resid1 = 4.541799e+06 (0x41515359dac3cfb0)
+CPU 18956 CG 0 iter 2 resid1 = 1.052203e+04 (0x40c48d033745d368)
+CPU 18956 CG 0 iter 3 resid1 = 2.438846e+01 (0x4038637226b37efd)
+CPU 18956 CG 0 iter 4 resid1 = 5.653139e-02 (0x3facf1aed724ad20)
+CPU 18956 CG 0 iter 5 resid1 = 1.326699e-04 (0x3f2163a9b46b5210)
+CPU 18956 CG 0 total iter times 5.
+================================================================================
+T/V                N    NB     P     Q               Time                 Gflops
+--------------------------------------------------------------------------------
+WR16C2C4     1523712  1024    15    16             204.84              1.151e+07 18956
+--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV--VVV-
+--------------------------------------------------------------------------------
+||Ax-b||_oo/(eps*(||A||_oo*||x||_oo+||b||_oo)*N)=        0.0001327 ...... PASSED 18956 ( 0 )
+--------------------------------------------------------------------------------
+Efficiency = 86.75%,  Rmax 11513119.526361 Gflops, Rpeak 13271040.000000 Gflops ( 18956 )
+resid=       0.0001327 (0x3f2163a9b46b5210) 
+================================================================================
+
+Finished      1 tests with the following results:
+              1 tests completed and passed residual checks,
+              0 tests completed and failed residual checks,
+              0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+
+End of Tests.
+================================================================================
