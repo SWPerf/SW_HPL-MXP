@@ -1,7 +1,7 @@
 #set -x
 export SWCH_CG_PER_PROCESS=6
 
-code_prefix=hpl-ai
+code_prefix=hpl-mxp
 code_suffix=ed56e59
 
 code_name=$code_prefix.$code_suffix
@@ -21,12 +21,12 @@ SPACE_IN_USE=80.0	# memory used in HPL-AI test. GB
 
 date_pro=`date +%y%m%d%H%M%S`
 
-./tools/matrix_size_shape $P $Q 1024 $SPACE_IN_USE 0.5 > /tmp/.hpl-ai.conf.$date_pro
+./tools/matrix_size_shape $P $Q 1024 $SPACE_IN_USE 0.5 > /tmp/.hpl-mxp.conf.$date_pro
 
-P=`awk '{print $1}' /tmp/.hpl-ai.conf.$date_pro`
-Q=`awk '{print $2}' /tmp/.hpl-ai.conf.$date_pro`
-N=`awk '{print $3}' /tmp/.hpl-ai.conf.$date_pro`
-firstpart=`awk '{print $4}' /tmp/.hpl-ai.conf.$date_pro`
+P=`awk '{print $1}' /tmp/.hpl-mxp.conf.$date_pro`
+Q=`awk '{print $2}' /tmp/.hpl-mxp.conf.$date_pro`
+N=`awk '{print $3}' /tmp/.hpl-mxp.conf.$date_pro`
+firstpart=`awk '{print $4}' /tmp/.hpl-mxp.conf.$date_pro`
 
 cpu_num=$(($P*$Q))
 
